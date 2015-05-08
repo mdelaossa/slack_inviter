@@ -1,8 +1,15 @@
-<h1>Join Slack Group</h1>
+<h1>Join Slack Team</h1>
+<span class="explanation">
+  Please fill out the form below to join the Slack team: <strong><%= @team_name %></strong>
+</span>
 <form action="/get_invite" method="post">
-  <label for="user_email">Email: </label>
-  <input type="text" name="user[email]" id="user_email" value="" placeholder="Enter your email" />
-  <label for="user_nick">Nickname: </label>
-  <input type="text" name="user[nick]" id="user_nick" value="" placeholder="Desired nick (no promises!)" />
+  <div>
+    <label for="user_email">Email: </label>
+    <input type="text" name="user[email]" id="user_email" value="" placeholder="Enter your email" />
+  </div>
+  <div>
+    <label for="user_nick">Nickname: </label>
+    <input type="text" name="user[nick]" id="user_nick" value="" placeholder="Desired nick (no promises!)" />
+  </div>
   <input type="submit" />
 </form>
