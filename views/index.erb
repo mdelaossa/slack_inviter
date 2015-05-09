@@ -1,7 +1,8 @@
 <h1>Join Slack Team</h1>
-<span class="explanation">
+<div class="row explanation">
   Please fill out the form below to join the Slack team: <strong><%= @team_name %></strong>
-</span>
+</div>
+<div class="row">
 <form action="/get_invite" method="post">
   <div>
     <label for="user_email">Email: </label>
@@ -16,6 +17,9 @@
     <label for="passphrase">Passphrase: </label>
     <input type="password" name="passphrase" id="passphrase" value="" /> The passphrase you were given
   </div>
-  <% end %>
+<% end %>
+<div>
   <input type="submit" />
+</div>
 </form>
+</div>

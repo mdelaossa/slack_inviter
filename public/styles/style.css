@@ -1,0 +1,47 @@
+body {
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.row {
+  clear: both;
+  margin-bottom: 1%;
+}
+
+h1 {
+  padding: 10px;
+}
+
+form {
+  text-align: right;
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form > div {
+  display: table-row;
+}
+
+form label {
+  padding-right: 10px;
+}
+
+form input {
+  margin-bottom: 5px;
+  width: 200px;
+}
+
+form label, form input {
+  display: table-cell;
+  height: 20px;
+}
+
+input[type="submit"] {
+  width: 100%;
+}
+
+.error {
+  display: block;
+  padding: 10px;
+}
