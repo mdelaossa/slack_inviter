@@ -11,16 +11,24 @@ config = YAML::load_file 'config.yml'
 
 get '/' do
   @team_name = config[:team]
+  @passphrase = true if config[:passphrase]
   erb :index
 end
 
 post '/get_invite' do
-  @user = OpenStruct.new(params['user'])
-  response = slack.invite(@user.email, @user.nick)
-  logger.info response
-  result = JSON.parse response.body
-  logger.info result
+  if params['passphrase'] == config[:passphrase]
+    @user = OpenStruct.new(params['user'])
+    response = slack.invite(@user.email, @user.nick)
+    logger.info response
+    result = JSON.parse response.body
+    logger.info result
 
-  @success = result['ok']
+    @success = result['ok']
+    @error = result['error']
+  else
+    @success = false
+    @error = 'Wrong passphrase'
+  end
+
   erb :get_invite
 end

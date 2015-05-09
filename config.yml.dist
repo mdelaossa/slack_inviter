@@ -3,4 +3,6 @@
 :api_key: apikeyhere (admin one)
 :channels:
 - channelID
-- channelID 
+- channelID
+#The passphrase is optional, if you don't write one it won't be required
+:passphrase: passphrasehere

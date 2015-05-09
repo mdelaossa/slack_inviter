@@ -5,11 +5,17 @@
 <form action="/get_invite" method="post">
   <div>
     <label for="user_email">Email: </label>
-    <input type="text" name="user[email]" id="user_email" value="" placeholder="Enter your email" />
+    <input type="email" name="user[email]" id="user_email" value="" placeholder="Enter your email" />
   </div>
   <div>
     <label for="user_nick">Nickname: </label>
     <input type="text" name="user[nick]" id="user_nick" value="" placeholder="Desired nick (no promises!)" />
   </div>
+  <% if @passphrase %>
+    <div>
+    <label for="passphrase">Passphrase: </label>
+    <input type="password" name="passphrase" id="passphrase" value="" /> The passphrase you were given
+  </div>
+  <% end %>
   <input type="submit" />
 </form>
