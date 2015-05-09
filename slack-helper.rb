@@ -2,10 +2,8 @@ class SlackHelper
 
   require 'net/http'
   require 'uri'
-  require 'yaml'
 
-  def initialize
-    config = YAML::load_file "./config.yml"
+  def initialize config
     team_name = config[:team]
     api_token = config[:api_key]
     @channels = config[:channels].join(', ')

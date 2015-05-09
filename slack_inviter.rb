@@ -6,8 +6,8 @@ require './slack-helper'
 
 set :bind, "0.0.0.0"
 
-slack = SlackHelper.new
 config = YAML::load_file 'config.yml'
+slack = SlackHelper.new config
 
 get '/' do
   @team_name = config[:team]
@@ -18,7 +18,7 @@ end
 post '/get_invite' do
   if params['passphrase'] == config[:passphrase]
     @user = OpenStruct.new(params['user'])
-    response = slack.invite(@user.email, @user.nick)
+    response = slack.invite(@user.email, @user.name)
     logger.info response
     result = JSON.parse response.body
     logger.info result
