@@ -3,6 +3,9 @@
   Please fill out the form below to join the Slack team: <strong><%= @team_name %></strong>
 </div>
 <div class="row">
+  If you've already registered, <a href="https://<%= @team_name %>.slack.com"><strong>please login here</strong></a>
+</div>
+<div class="row">
 <form action="/get_invite" method="post">
   <div>
     <label for="user_email">Email: </label>
