@@ -36,9 +36,6 @@ class ApiCaller
     #request.body = parameters.to_json
     request.set_form_data parameters
 
-    puts "Request path: #{request.path}"
-    puts "Request body: #{request.body}"
-
     make_request request
   end
 
