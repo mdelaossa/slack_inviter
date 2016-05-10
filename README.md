@@ -8,3 +8,11 @@ Quick inviter for Slack
 - run `bundler install`
 - start the server by running `rackup config.ru -p PORT` (you can omit
   -p, it'll default to port 9292)
+
+### How to get a Slack API Token
+- Visit https://api.slack.com/docs/oauth-test-tokens and generate a test token
+
+### How to get Channel IDs
+```
+curl -X POST 'https://YOURTEAM.slack.com/api/channels.list' --data 'token=YOUR SLACK TOKEN' --compressed
+```
